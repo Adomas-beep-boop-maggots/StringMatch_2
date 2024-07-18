@@ -19,19 +19,19 @@
     """;
     
         static String findMatchInString(String line, String match) {
-            char c;
+            char letter;
             int matchLength = match.length();
             int needToFind = matchLength;
             outerLoop:
             for (int i = 0; i <= line.length() - matchLength; i++) {
-                c = line.charAt(i);
-                while ((c == match.charAt(matchLength - needToFind))) {
+                letter = line.charAt(i);
+                while ((letter == match.charAt(matchLength - needToFind))) {
                     needToFind--;
                     if (needToFind == 0) {
                         break outerLoop;
                     }
                     i++;
-                    c = line.charAt(i);
+                    letter = line.charAt(i);
                 }
                 needToFind = matchLength;
             }
