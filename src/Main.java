@@ -18,24 +18,24 @@
     rASh3H*r:eLy?BtT[A@qf!69#M],h]
     """;
     
-        static String findMatchInString(String l, String match) {
+        static String findMatchInString(String line, String match) {
             char c;
             int matchLength = match.length();
             int needToFind = matchLength;
             outerLoop:
-            for (int i = 0; i <= l.length() - matchLength; i++) {
-                c = l.charAt(i);
+            for (int i = 0; i <= line.length() - matchLength; i++) {
+                c = line.charAt(i);
                 while ((c == match.charAt(matchLength - needToFind))) {
                     needToFind--;
                     if (needToFind == 0) {
                         break outerLoop;
                     }
                     i++;
-                    c = l.charAt(i);
+                    c = line.charAt(i);
                 }
                 needToFind = matchLength;
             }
-            return needToFind == 0 ? l : null;
+            return needToFind == 0 ? line : null;
         }
     
         public static void main(String[] args) {
